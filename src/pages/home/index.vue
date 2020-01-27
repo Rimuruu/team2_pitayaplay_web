@@ -2,8 +2,7 @@
     <div class="home">
         <Header/>
         <Main/>
-
- <Footer/>
+        <Footer/>
     </div>
    
 </template>
