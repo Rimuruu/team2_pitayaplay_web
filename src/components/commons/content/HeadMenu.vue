@@ -1,6 +1,6 @@
 <template>
-    <div class="head-logo">
-    LOGO
+    <div class="head-menu">
+
 
 
     </div>
@@ -8,15 +8,15 @@
 
 <script>
 export default {
-    name: "HeadLogo"
+    name: "HeadMenu"
     
 }
 </script>
 
 <style scoped>
-.head-logo{
-    background-color: grey;
-    width: 20%;
+.head-menu{
+    background-color:black;
+    width: 80%;
     display: flex;
     justify-content: center;
     align-items: center;

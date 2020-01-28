@@ -1,6 +1,6 @@
 <template>
-    <div class="head-menu">
-    MENU
+    <div class="head-logo">
+    <router-link :to="{name: 'home'}"> LOGO</router-link>
 
 
     </div>
@@ -8,15 +8,15 @@
 
 <script>
 export default {
-    name: "HeadMenu"
+    name: "HeadLogo"
     
 }
 </script>
 
 <style scoped>
-.head-menu{
-    background-color:black;
-    width: 80%;
+.head-logo{
+    background-color: grey;
+    width: 20%;
     display: flex;
     justify-content: center;
     align-items: center;

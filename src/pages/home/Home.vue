@@ -1,22 +1,22 @@
 <template>
-    <div class="article">
-        <Header/>
-        <Main/>
-        <Footer/>
+    <div class="home">
+        
+    <MainNew/>
+       
     </div>
 </template>
 
 <script>
 
-    import Main from "@/components/Main.vue"
-    
+    import MainNew from "@/components/MainNew.vue"
+
 
     export default {
-        name: "HomeIndex",
+        name: "HomeNew",
         components: {
-           
-            Main,
-        
+          
+            MainNew,
+    
         }
     }
 </script>
