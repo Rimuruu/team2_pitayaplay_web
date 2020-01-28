@@ -1,17 +1,16 @@
 <template>
-  <div id="app">    
-    <HomeIndex/>
-  </div>
+  <div id="app">
+    <router-link :to="{name: 'home'}">Home </router-link>
+    <router-link :to="{name: 'article', params: {id: 1}}">Article 1 </router-link>
+    <router-link :to="{name: 'article', params: {id: 2}}">Article 2 </router-link>
+    <router-view/>
+  </div>  
+  
 </template>
 
 <script>
-
-import HomeIndex from "@/pages/home/index.vue"
 export default {
-  name: 'app',
-  components: {
-    HomeIndex
-  }
+  name: 'app'
 }
 </script>
 
@@ -22,13 +21,8 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-
-  padding: 0%;
-}
-
-body{
-    margin: 0%;
-    padding: 0%;
-
+  margin-top: 60px;
+  width: 100%;
+  height: 100%;
 }
 </style>

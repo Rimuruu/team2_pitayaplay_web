@@ -1,31 +1,30 @@
 <template>
     <div class="header">
-       <HeadLogo/>
-        <HeadMenu/>
-
-
+        AVOCADO BLOG
     </div>
 </template>
 
 <script>
-import HeadLogo from "@/commons/content/HeadLogo"
-import HeadMenu from "@/commons/content/HeadMenu.vue"
-export default {
-    name: "Header",
-    components:{
-        HeadLogo,
-        HeadMenu
+    export default {
+        name: "Header"
     }
-}
 </script>
 
 <style scoped>
+    .header {
+        display: flex;
+        position: fixed;
 
-.header{
-    height: 150px;;
-    display: flex;
+        align-items: center;
+        justify-content: center; 
 
-    
-}
+        background-color: #2c2c2c;
 
+        width: 100%;
+        height: 80px;
+
+        color: beige;
+
+        text-align: center;
+    }
 </style>
