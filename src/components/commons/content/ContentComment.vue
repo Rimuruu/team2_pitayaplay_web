@@ -3,7 +3,7 @@
     <div class="content-comment-header">{{ count() }} Commentaires</div>
     <div class="content-comment-container">
       <div class="content-comment-item" v-for="(item, index) in comments" v-bind:key="index">
-        <Comment :index="item.index" :username="item.username" :text="item.text"/>
+        <Comment :index="item.index" :username="item.username" :text="item.text" :mail="index.mail"/>
       </div>
       <div class="comment-content-form-add">
         <input type="text" placeholder="Ton username..." title="Username" v-model="formCommentUsername" />

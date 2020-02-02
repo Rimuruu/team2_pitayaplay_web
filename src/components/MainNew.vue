@@ -133,10 +133,4 @@ export default {
 
   }
 }
-
-
-
-
-
-
 </style>
