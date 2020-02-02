@@ -1,7 +1,7 @@
 <template>
   <div class="mainnew">
     <div class="container" >
-       <router-link v-for="(item, index) in sortedItems()"  v-bind:key="index" :to="{name: 'article',params: {id: item.number}}" @click.native="$scrollToTop">
+       <router-link v-for="(item, index) in sortedItems()"  v-bind:key="index" :to="{name: 'article',params: {id: item.number}}">
     <Thumbnail  v-bind:key="index" v-bind:title="item.title"  
     v-bind:style="{
               backgroundImage: 'url('+require('../assets/'+item.image+'.jpg')+')',

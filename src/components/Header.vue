@@ -1,5 +1,6 @@
 <template>
     <div class="header">
+
         <HeadLogo/> 
       
         <HeadMenu/>
@@ -11,6 +12,7 @@
 <script>
 import HeadLogo from "@/components/commons/content/HeadLogo.vue"
 import HeadMenu from "@/components/commons/content/HeadMenu.vue"
+
 export default {
     name: "Header",
     components:{

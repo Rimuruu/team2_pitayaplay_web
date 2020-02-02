@@ -26,12 +26,7 @@ const routes = [
 
 const router = new VueRouter({
     routes,
-    mode: 'history',
-    methods: { 
-        scrollToTop() {
-             window.scrollTo(0,0);
-        }
-     }
+    mode: 'history'
 });
 
 export default router;
