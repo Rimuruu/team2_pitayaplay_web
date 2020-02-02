@@ -20,12 +20,18 @@ const routes = [
         path: '/',
         name: 'home',
         component: HomeNew,
-    }
+    },
+    
 ];
 
 const router = new VueRouter({
     routes,
-    mode: 'history'
+    mode: 'history',
+    methods: { 
+        scrollToTop() {
+             window.scrollTo(0,0);
+        }
+     }
 });
 
 export default router;

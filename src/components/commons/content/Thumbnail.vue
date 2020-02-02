@@ -1,7 +1,7 @@
 <template>
   <div class="thumbnail">
 
-  <div class="image"> 
+  <div class="image" :title="title"> 
       </div>
    <h2 class="title">
         {{title}}

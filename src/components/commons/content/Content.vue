@@ -4,7 +4,7 @@
       <div class="separator-border"></div>
     </div>
     
-    <ContentHeader :title="title" />
+    <ContentHeader :title="title" :img="img" />
     <ContentAuthor :author="author" :date="date"/>
     <ContentArticle v-bind:text="text" />
     <ContentComment />
@@ -29,8 +29,11 @@ export default {
     text: String,
     title: String,
     author: String,
-    date: Date
+    date: Date,
+    img: String
   }
+  
+
 };
 </script>
 

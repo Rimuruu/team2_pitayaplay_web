@@ -3,9 +3,17 @@
         <div class="content-header-title">
             <h1>
                {{ title }}
+              
             </h1>
         </div>
-        <div class="content-header-image">
+        <div class="content-header-image" :style="{
+              backgroundImage: 'url('+require('../../../assets/'+img+'.jpg')+')',
+              backgroundPosition: 'center',
+       
+              
+              
+              }"
+            >
         </div>
     </div>
 </template>
@@ -14,7 +22,8 @@
 export default {
     name: "ContentHeader",
     props: {
-        title: String
+        title: String,
+        img: String
     }
 }
 </script>
@@ -30,8 +39,9 @@ export default {
     }
 
     .content-header .content-header-image {
-        background-image: url("~@/assets/image_article.jpg");
+
         background-position: center;
+          background-size: cover; 
         padding-top: 600px;
     }
 </style>

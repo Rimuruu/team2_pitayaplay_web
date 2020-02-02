@@ -33,12 +33,7 @@ export default {
   data() {
     return {
       comments: [
-        {
-          index: 1,
-          username: "John delaneige",
-          text: "Waouh ! I know nothing !",
-          mail: "john.delaneige@gmail.com"
-        }
+       
       ],
       formCommentUsername: "",
       formCommentText: "",
