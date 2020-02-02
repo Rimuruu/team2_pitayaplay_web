@@ -15,7 +15,7 @@ export default {
   props: {
       index: Number,
       username: String,
-      text: String,
+      text: String
   }
 };
 </script>

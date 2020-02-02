@@ -6,13 +6,14 @@
         <Comment :index="item.index" :username="item.username" :text="item.text"/>
       </div>
       <div class="comment-content-form-add">
-        <input type="text" placeholder="Ton username..." v-model="formCommentUsername" />
-        <input type="email" title="Email valide" placeholder="Ton adresse email..." v-model="formCommentMail" />
+        <input type="text" placeholder="Ton username..." title="Username" v-model="formCommentUsername" />
+        <input type="email" title="Adresse mail" placeholder="Ton adresse email..." v-model="formCommentMail"/>
         <textarea
           name="comment"
           id="add-comment-text"
           cols="30"
           rows="3"
+          title="Commentaire"
           placeholder="Commente par ici ..."
           v-model="formCommentText"
         ></textarea>
@@ -51,7 +52,14 @@ export default {
         text: this.formCommentText,
         mail: this.formCommentMail
       };
-      this.comments.push(comment);
+      if(this.formCommentMail.match(/^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$/) && 
+        this.formCommentUsername.length >= 4 &&
+        this.formCommentText != ""){
+        this.comments.push(comment);
+      }
+      else{
+        alert("Vérifer que : \n1) Username doit contenir au minimum 4 caractères\n2) Le commentaire n'est pas vide\n3) L'adresse est valide");
+      }
       this.resetField();
       e.preventDefault();
     },
