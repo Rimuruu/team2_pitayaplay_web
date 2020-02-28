@@ -6,6 +6,11 @@
               
             </h1>
         </div>
+    <div class="content-header-title2">
+        <h2>
+                Note + Nom du Jeu + Categorie
+        </h2>
+    </div>
         <div class="content-header-image" :style="{
               backgroundImage: 'url('+require('../../../assets/'+img+'.jpg')+')',
               backgroundPosition: 'center',
@@ -34,6 +39,11 @@ export default {
     }
 
     .content-header .content-header-title {
+        text-align: center;
+        font-size: 30px;
+    }
+
+    .content-header .content-header-title2 {
         text-align: center;
         font-size: 30px;
     }

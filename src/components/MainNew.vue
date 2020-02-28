@@ -12,6 +12,12 @@
               }" /> </router-link>
     
     </div>
+    <div class="container-categorie">
+      <div class ="categorie">RPG</div>
+      <div class ="categorie">ACTION</div>
+      <div class ="categorie">FPS</div>
+      <div class ="categorie">MMO</div>
+    </div>
   </div>
 </template>
 
@@ -106,6 +112,10 @@ export default {
 
 }
 
+.container-categorie{
+  background-color: aquamarine;
+}
+
 .mainnew .container {
   background-color: green;
 
@@ -115,7 +125,7 @@ export default {
 
   
 }
-@media all and (min-width: 1280px) {
+@media all and (min-width: 1024px) {
   .container{
       grid-template-columns: 1fr 1fr 1fr;
       grid-template-rows: 1fr 1fr 1fr;
@@ -125,12 +135,30 @@ export default {
 }
 
 
-@media all and (max-width: 1280px) {
+@media all and (max-width: 1024px) {
+  .container{
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: 1fr 1fr;
+      
+
+  }
+}
+
+
+@media all and (max-width: 768px) {
   .container{
       grid-template-columns: 1fr;
       grid-template-rows: 1fr;
       grid-gap: 50px 50px;
 
   }
+}
+
+.categorie{
+  background-color: azure;
+  margin-top: 10px;
+  width: 200px;
+  display: flex;
+  justify-content: center;
 }
 </style>

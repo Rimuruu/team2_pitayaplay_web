@@ -2,6 +2,7 @@
   <div class="thumbnail">
 
   <div class="image" :title="title"> 
+    <div class="note"><h2>10</h2></div>
       </div>
    <h2 class="title">
         {{title}}
@@ -19,6 +20,7 @@ export default {
   props: {
     title: String,
     image:String,
+    note:Number,
   }
 }
 </script>
@@ -50,7 +52,7 @@ export default {
       flex-direction: column;
     }
 
-@media all and (min-width: 1280px) {
+@media all and (min-width: 1024px) {
   .thumbnail{
     
     width: 300px;
@@ -64,18 +66,43 @@ export default {
 }
 
 
-@media all and (max-width: 1280px) {
+@media all and (max-width: 1024px){
   .thumbnail{
-    width: 600px;
-    height: 400px;
+    
+    width: 300px;
+    height: 200px;
  
 }
 .image {
-        height: 400px;
-        width: 600px;
+        height: 200px;
+        width: 300px;
     }
 }
 
+
+@media all and (max-width: 768px) {
+  .thumbnail{
+    width: 400px;
+    height: 200px;
+ 
+}
+.image {
+        height: 200px;
+        width: 400px;
+        
+
+    }
+}
+
+.note{
+  background-color: aquamarine;
+  height: 60px;
+  width: 60px;
+  float: right;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 
 
 

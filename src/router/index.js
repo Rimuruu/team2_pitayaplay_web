@@ -21,6 +21,16 @@ const routes = [
         name: 'home',
         component: HomeNew,
     },
+    {
+        path: '/games/',
+        name: 'games',
+        component: HomeNew,
+    },
+    {
+        path: '/game/:id',
+        name: 'game',
+        component: HomeNew,
+    },
     
 ];
 

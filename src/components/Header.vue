@@ -27,7 +27,7 @@ export default {
 .header{
     height: 150px;;
     display: flex;
-
+    background-color: black;
     
 }
 
