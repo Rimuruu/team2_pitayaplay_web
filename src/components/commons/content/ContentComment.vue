@@ -3,7 +3,7 @@
     <div class="content-comment-header">{{ count() }} Commentaires</div>
     <div class="content-comment-container">
       <div class="content-comment-item" v-for="(item, index) in comments" v-bind:key="index">
-        <Comment :index="item.index" :username="item.username" :text="item.text" :mail="index.mail"/>
+        <Comment :index="item.index" :username="item.username" :text="item.text" :mail="index.email"/>
       </div>
       <div class="comment-content-form-add">
         <input type="text" placeholder="Ton username..." title="Username" v-model="formCommentUsername" />
@@ -25,12 +25,13 @@
 
 <script>
 import Comment from "@/components/commons/comment/Comment.vue";
-
+import axios from "axios"
 export default {
   name: "ContentComment",
   components: {
     Comment
   },
+
   data() {
     return {
       comments: [
@@ -39,6 +40,7 @@ export default {
       formCommentUsername: "",
       formCommentText: "",
       formCommentMail: "",
+      errors:null,
     };
   },
   methods: {
@@ -46,16 +48,26 @@ export default {
       return this.comments.length;
     },
     send(e) {
-      let comment = {
-        index: this.count() + 1,
-        username: this.formCommentUsername,
-        text: this.formCommentText,
-        mail: this.formCommentMail
-      };
+    
       if(this.formCommentMail.match(/^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$/) && 
         this.formCommentUsername.length >= 4 &&
         this.formCommentText != ""){
-        this.comments.push(comment);
+       
+        axios.post('http://localhost:3000/game/'+this.$route.params.id+'/comment',{
+          comment:this.formCommentText,
+          email:this.formCommentMail,
+          username:this.formCommentUsername,
+
+        }).then(response => {
+           this.comments.push(
+             {
+                index: this.count() + 1,
+                username: response.data.username,
+                 text: response.data.text,
+                 mail: response.data.email
+             })
+             })
+        .catch(e =>{this.errors.push(e);} )
       }
       else{
         alert("Vérifer que : \n1) Username doit contenir au minimum 4 caractères\n2) Le commentaire n'est pas vide\n3) L'adresse est valide");
@@ -68,7 +80,20 @@ export default {
       this.formCommentText = "";
       this.formCommentMail = "";
     }
-  }
+  },
+   mounted(){
+     axios
+      .get('http://localhost:3000/game/'+this.$route.params.id+'/comment')
+      .then(responses => {
+        this.comments = responses.data;
+        }).catch(e => {
+
+     this.errors.push(e);
+    });
+   }
+   
+ 
+
 };
 </script>
 

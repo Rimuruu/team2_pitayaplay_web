@@ -4,10 +4,10 @@
       <div class="separator-border"></div>
     </div>
     
-    <ContentHeader :title="title" :img="img" />
-    <ContentAuthor :author="author" :date="date"/>
-    <ContentArticle v-bind:text="text" />
-    <ContentComment />
+    <ContentHeader :title="title" :img="img" :note="parseInt(note)" :jeu="jeu" :categorie="categorie"/>
+    <ContentAuthor :author="author" :date="new Date(date)"/>
+    <ContentArticle v-bind:text="text" :note="note" :jeu="jeu" :categorie="categorie" />
+    <ContentComment/>
   </div>
 </template>
 
@@ -30,7 +30,13 @@ export default {
     title: String,
     author: String,
     date: Date,
-    img: String
+    img: String,
+    note:  Number,
+    jeu: String,
+    categorie:String,
+
+
+    
   }
   
 

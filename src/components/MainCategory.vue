@@ -16,7 +16,7 @@
     
     </div>
     <div class="container-categorie">
-      <router-link v-for="(item, index) in category"  v-bind:key="index" :to="{name: 'category',params: {id: item.id}}"> <div class ="categorie">{{item.category}}</div></router-link>
+       <router-link v-for="(item, index) in category"  v-bind:key="index" :to="{name: 'category',params: {id: item.id}}"> <div class ="categorie">{{item.category}}</div></router-link>
     </div>
   </div>
 </template>
@@ -31,7 +31,6 @@ export default {
   },
   data(){
     return {
-   
       game: [],
       category: null,
       errors: null,
@@ -47,8 +46,9 @@ export default {
 
 },
   mounted () {
+ 
     axios
-      .get('http://localhost:3000/category')
+      .get('http://localhost:3000/category/')
       .then(response => {
         this.category = response.data;
         }).catch(e => {
@@ -56,7 +56,16 @@ export default {
      this.errors.push(e);
     });
      axios
-      .get('http://localhost:3000/game')
+      .get('http://localhost:3000/category/'+this.$route.params.id)
+      .then(response => {
+        this.game = response.data;
+        }).catch(e => {
+     this.errors.push(e);
+    }) 
+  },
+  updated(){
+      axios
+      .get('http://localhost:3000/category/'+this.$route.params.id)
       .then(response => {
         this.game = response.data;
         }).catch(e => {
@@ -79,16 +88,14 @@ export default {
 
 
 }
+
 .categorie{
   color: black;
 }
 
 .container-categorie{
   background-color: aquamarine;
-  
 }
-
- 
 
 .mainnew .container {
   background-color: green;

@@ -3,7 +3,7 @@
      <div v-html="text"></div>
       <div class="content-article-end">
         <h2>
-            Note + Nom du Jeu + Categorie
+            {{note}} | {{jeu}} | {{categorie}}
         </h2>
   </div>
   </div>
@@ -14,7 +14,10 @@
 export default {
   name: "ContentArticle",
   props: {
-      text: String
+      text: String,
+      note:  Number,
+      jeu: String,
+      categorie:String,
   }
 };
 </script>

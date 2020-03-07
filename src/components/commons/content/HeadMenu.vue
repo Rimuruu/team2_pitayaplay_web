@@ -4,7 +4,7 @@
         <h2>Test</h2>
         </div>
         <div class="head-ecrire">
-        <h2>Ecrire un Test</h2>
+        <router-link :to="{name:'ecriretest'}"><h2>Ecrire un Test</h2></router-link>
         </div>
 
 

@@ -2,7 +2,7 @@
   <div class="thumbnail">
 
   <div class="image" :title="title"> 
-    <div class="note"><h2>10</h2></div>
+    <div class="note"><h2>{{note}}</h2></div>
       </div>
    <h2 class="title">
         {{title}}
@@ -27,12 +27,6 @@ export default {
 
 <style scoped>
 
-
-
-
-
-   
-
     .title{
         background-color: orange;
         margin: 0px;
@@ -42,11 +36,23 @@ export default {
     }
 
     .image{
-
+        opacity: 1;
         background-position: center;
         background-size: cover; 
+        background-repeat: repeat-y;
     }
 
+    .thumbnail{
+      opacity: 1;
+    }
+
+    .thumbnail:hover{
+      opacity: 0.5;
+    }
+   
+    .note{
+      color: black
+  }
     .thumbnail{
       display: flex;
       flex-direction: column;

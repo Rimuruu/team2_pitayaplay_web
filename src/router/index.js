@@ -4,18 +4,16 @@ import VueRouter from 'vue-router';
 // Pages
 
 import HomeNew from '@/pages/home/Home.vue';
-import Article from '@/pages/article/Index.vue';
+import HomeCategory from '@/pages/home/HomeCategory.vue';
+import HomeIndex from '@/pages/article/Index.vue';
+import HomeFormulaire from '@/pages/home/HomeFormulaire.vue';
 
 Vue.use(VueRouter);
 
 //Listes des routes
 const routes = [
  
-    {
-        path: '/article/:id',
-        name: 'article',
-        component: Article,
-    },
+
     {
         path: '/',
         name: 'home',
@@ -24,12 +22,22 @@ const routes = [
     {
         path: '/games/',
         name: 'games',
-        component: HomeNew,
+        component: HomeIndex,
     },
     {
         path: '/game/:id',
         name: 'game',
-        component: HomeNew,
+        component: HomeIndex,
+    },
+    {
+        path: '/category/:id',
+        name: 'category',
+        component: HomeCategory,
+    },
+    {
+        path: '/ecriretest',
+        name: 'ecriretest',
+        component: HomeFormulaire,
     },
     
 ];

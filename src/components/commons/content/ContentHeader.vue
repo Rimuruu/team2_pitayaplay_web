@@ -8,11 +8,11 @@
         </div>
     <div class="content-header-title2">
         <h2>
-                Note + Nom du Jeu + Categorie
+                {{note}}  | {{jeu}} | {{categorie}}
         </h2>
     </div>
         <div class="content-header-image" :style="{
-              backgroundImage: 'url('+require('../../../assets/'+img+'.jpg')+')',
+              backgroundImage: 'url('+img+')',
               backgroundPosition: 'center',
        
               
@@ -28,7 +28,11 @@ export default {
     name: "ContentHeader",
     props: {
         title: String,
-        img: String
+        img: String,
+        note:  Number,
+        jeu: String,
+        categorie:String,
+
     }
 }
 </script>
