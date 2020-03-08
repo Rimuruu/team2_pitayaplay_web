@@ -36,7 +36,7 @@ export default {
   },
     mounted () {
        axios
-      .get('http://localhost:3000/game/'+(this.$route.params.id))
+      .get('http://localhost:3001/game/'+(this.$route.params.id))
       .then(response => {
         this.article= response.data;
         }).catch(e => {

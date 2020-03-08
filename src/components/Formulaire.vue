@@ -59,7 +59,7 @@ export default {
   },
   methods: {
     send(e){
-       axios.post('http://localhost:3000/game/',{
+       axios.post('http://localhost:3001/game/',{
           titre:this.formTitre,
           jeu: this.formJeu,
           image:this.formUrl,

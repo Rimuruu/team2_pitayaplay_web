@@ -48,7 +48,7 @@ export default {
   mounted () {
  
     axios
-      .get('http://localhost:3000/category/')
+      .get('http://localhost:3001/category/')
       .then(response => {
         this.category = response.data;
         }).catch(e => {
@@ -56,7 +56,7 @@ export default {
      this.errors.push(e);
     });
      axios
-      .get('http://localhost:3000/category/'+this.$route.params.id)
+      .get('http://localhost:3001/category/'+this.$route.params.id)
       .then(response => {
         this.game = response.data;
         }).catch(e => {
@@ -65,7 +65,7 @@ export default {
   },
   updated(){
       axios
-      .get('http://localhost:3000/category/'+this.$route.params.id)
+      .get('http://localhost:3001/category/'+this.$route.params.id)
       .then(response => {
         this.game = response.data;
         }).catch(e => {
